@@ -1,5 +1,11 @@
 const db = require('../db/connection');
 
+exports.autoApprove = (req, res, next) => {
+  // Add your actual auto-approve logic here
+  console.log("AutoApprove middleware running");
+  next();
+};
+
 exports.createBooking = (req, res) => {
   const { firstname, lastname, region, kebele, country, travelFrom, travelTo, roomId } = req.body;
   const user_id = 1; // replace with real session/auth ID
